@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="b"><a href="//localhost:8080">Back</a></div>
+    <div class="main">
+        <h1 style="font-weight: 400;">SIGN UP</h1>
+            <form action="http://localhost:8080/signup" method="post">
+                    <p>Username : <input type="text" name="username" placeholder="Enter username" style="opacity: 0.8;"></p>
+                    <p>Password : <input type="text" name="password" placeholder="Enter password" style="opacity: 0.8;"></p>
+                    <button class="button" type="submit">Submit</button>
+            </form>
+        <% if(username_check){ %>
+            <script>
+                alert("THIS USERNAME IS ALREADY CHOOSEN")
+            </script>
+        <% } %>
+    </div>
+</body>
+</html>

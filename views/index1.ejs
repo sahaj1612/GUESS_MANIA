@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style1.css">
+</head>
+<body>
+    <div class="b"><a href="//localhost:8080/<%= username %>">Home page</a></div>
+    <div class="main">
+        <form action="/<%= username %>/word" method="post">
+            <p>guess the word : <input type="text" name="n1" style="opacity: 0.5;"><button type="submit" style="visibility: hidden;">Submit</button></p>
+        </form>
+        <p>hint : <%= hint %> </p>
+    </div>
+    
+
+    <%if(n1){%>
+        <% if(word === n1) { %>
+        <p class="hint">You guessed it right . The correct word is <%= word %></p>
+        <div class="b hint"><a href="//localhost:8080/<%= username %>/word">Play again</a></div>
+    <%} else{%>
+        <p class="hint">You guessed it wrong . The correct word is <%= word %></p>
+        <div class="b hint"><a href="//localhost:8080/<%= username %>/word">Play again</a></div>
+    <% }%>
+    <%}%>
+
+</body>
+</html>

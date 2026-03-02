@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style2.css">
+</head>
+<body>
+
+    <div class="b"><a href="//localhost:8080/<%= username %>">Home page</a></div>
+    <div class="main">
+        <form method="get" action="http://localhost:8080/<%= username %>/number">
+            <p>Enter the range of guessing the number from 1 to : <input type="text" name="n1" style="opacity: 0.5;"></p>
+            <p>Guess the number : <input type="text" name="n2" style="opacity: 0.5;"><button type="submit" style="visibility: hidden;">Submit</button></p>
+        </form>
+    </div>
+
+    <% if (n1 && n2) { 
+        const randomNumber = Math.floor(Math.random() * n1) + 1;
+    %>
+        <% if (randomNumber == n2) { %>
+            <p style="margin-left: 450px;">Your guess is right . The correct guess was  <%= randomNumber %></p>
+            <div class="b hint"><a href="//localhost:8080/<%= username %>/number">Play again</a></div>
+        <% } else { %>
+            <p style="margin-left: 450px;">Your guess is wrong . The correct guess was  <%= randomNumber %></p>
+            <div class="b hint"><a href="//localhost:8080/<%= username %>/number">Play again</a></div>
+        <% } %>
+    <% } %>
+
+</body>
+</html>
